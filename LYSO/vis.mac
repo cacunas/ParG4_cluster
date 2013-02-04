@@ -1,0 +1,35 @@
+#Create an OpenGL view:
+#/vis/open OGL 
+
+# Disable auto refresh and quieten vis messages whilst scene and
+# trajectories are established:
+#/vis/viewer/set/autoRefresh false
+#/vis/verbose errors
+
+#/vis/viewer/set/viewpointThetaPhi 45 45 deg
+
+# Draw geometry:
+#/vis/drawVolume
+
+# Draw coordinate axes:
+#/vis/scene/add/axes 0 0 0 50 mm
+
+# Draw trajectories at end of event.
+# Add "smooth" or "rich" to change viewing details
+#/vis/scene/add/trajectories
+
+#Select colour by particle ID:
+#/vis/modeling/trajectories/create/drawByParticleID
+#/vis/modeling/trajectories/drawByParticleID-0/set e- red
+#/vis/modeling/trajectories/drawByParticleID-0/set e+ green 
+#/vis/modeling/trajectories/drawByParticleID-0/set gamma magenta
+#/vis/modeling/trajectories/drawByParticleID-0/set opticalphoton gray
+
+#Superimpose all of the events from a given run:
+#/vis/scene/endOfEventAction accumulate 
+
+# Re-establish auto refreshing:
+#/vis/viewer/set/autoRefresh true
+#/vis/verbose warnings
+
+/run/beamOn 1000

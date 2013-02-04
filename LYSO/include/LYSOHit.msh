@@ -1,0 +1,16 @@
+%{
+#include "LYSOHit.hh"
+//MSH_include_begin
+#include "MarshaledG4String.h"
+//MSH_include_end
+%}
+
+// This file is generated automatically from LYSOHit.hh .  It is an
+//   intermediate file useful for debugging, but otherwise may be deleted.
+
+ marshaling class MarshaledLYSOHit (LYSOHit* param) {
+	unmarshaling constructor {
+	$THIS = new LYSOHit();
+	}
+}
+
