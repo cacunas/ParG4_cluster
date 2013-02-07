@@ -4,7 +4,7 @@ ParG4_cluster
 Multi threaded code for geant4 simulations. For being used over the cluster.
 
 This repo contains the source code that implements the simulation of a simple 
-setup of a LYSO scintillator crystal on a cluster, using multithreading to 
+set-up of a LYSO scintillator crystal on a cluster, using multi threading to 
 improve the performance of several events over a reduced amount of time.
 
 The software used for this project and their respective versions are:
@@ -41,7 +41,7 @@ The original LYSO source file structure was like this:
 Note that in the original version the compilation of the project were made
 with CMake, so there were no need for a Makefile.
 
-Now, the multithreaded version file structure is like the following:
+Now, the multi threaded version file structure is like the following:
 
 +- LYSO/
   +- src/
@@ -92,7 +92,7 @@ Now, the multithreaded version file structure is like the following:
   +- LYSO.cc (*)
   +- ParTopC.icc (*)
   
-The differences witj the original version are the ones marked with the '(*)'
+The differences with the original version are the ones marked with the '(*)'
 (the AnnotatedFiles and its content its whole new, so I just marked the directory 
 instead of all the files in it). The explanation for these differences will be explained below.
 
