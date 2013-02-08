@@ -93,6 +93,30 @@ Now, the multi threaded version file structure is like the following:
   +- ParTopC.icc (*)
   
 The differences with the original version are the ones marked with the '(*)'
-(the AnnotatedFiles and its content its whole new, so I just marked the directory 
-instead of all the files in it). The explanation for these differences will be explained below.
+(the directory 'AnnotatedFiles' and its content is whole new, so I just marked 
+the directory instead of all the files in it). The explanation for these 
+differences will be explained below.
+
+The usual geant4 simulations needs the following classes to create a proper program:
+
+-DetectorConstruction
+-PhysicsList
+-PrimaryGeneratorAction
+-EventAction
+-RunAction
+
+In the case that the simulation require a more specific or realistic aquisition of data, 
+the usual way to do this is to use (in conjuction with the previous ones) the 
+'SensitiveDetector' class. When using this class, a more precise control its achieved 
+by using the classes definig and storing the "hits". In our case, the chosen class is 'Hits'.
+
+The task of parallelization itself is performed by TOP-C, so the first modification needed 
+in order to port you application to a multi-thread version is to include the file 'ParTopC.icc', 
+and include it on your main file (in this case is 'LYSO.cc').
+
+The second important modification is to add  file named 'procgroup'. This file is used to
+determine the number of threads that will be used in the simulation. For our case, as we will be
+always working on the same cluster, is enough to copy the 'procgroup' file on this project to 
+any other simulation using multi-thread.
+
 
