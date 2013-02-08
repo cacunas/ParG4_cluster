@@ -1,0 +1,3 @@
+LYSO execution, with 12 slaves (parallel process):
+
+38m56.675s	40.000 events

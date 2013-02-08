@@ -1,0 +1,6 @@
+This are the packaged used to make this simulation (LYSO scintillator) work under a cluster
+using parrallelized processing:
+
+-ROOT: 		Version   5.34/02
+-GEANT4:	Version   9.5.1
+-
